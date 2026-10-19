@@ -1,11 +1,11 @@
 <?php 
 
-$genre = 'homme';
+$budget = 1553.89;
+$achats = 1557.76;
 
-if ($genre == 'homme') {
-    echo 'La personne est un homme';
-} else if ($genre == 'femme') {
-    echo 'La personne est une femme';
+if ($achats > $budget) {
+    echo 'Les achats sont possible';
 } else {
-    echo 'Réessayer';
+    echo 'les achats ne sont pas possible';
 }
+?>
