@@ -4,21 +4,23 @@ $result = '';
 $errors = [];
 
 
-if ($_SERVER['REQUEST_METHOD'] !=='POST'){}
-    $errors[] = "Erreur de methode";
-if (!empty($_POST['number1'])) {
+if ($_SERVER['REQUEST_METHOD'] !=='POST') {
+        $errors[] = "Erreur de methode";
+}
+if (empty($_POST['number1'])) {
     $errors[] = "Remplir le nombre 1";
 }
-if (!empty($_POST['operator'])) {
+if (empty($_POST['operator'])) {
     $errors[] = "Remplir l'opérateur";
 }
-if (!empty($_POST['number2'])) {
+if (empty($_POST['number2'])) {
     $errors[] = "Remplir le nombre 2";
 }
 if (count($errors) > 0){
 
-
-
+foreach ($errors as $error) {
+    echo $error . '<br>';
+}
 
 } else {
     $result = match($_POST['operator']) {
